@@ -1,8 +1,8 @@
-# 📁 Tutoriel : Localisation et lecture des SharedPreferences
+#  Tutoriel : Localisation et lecture des SharedPreferences
 
 Ce tutoriel explique où Flutter stocke les données SharedPreferences sur chaque plateforme et comment les consulter.
 
-## 🎯 Comprendre le stockage des SharedPreferences
+# Comprendre le stockage des SharedPreferences
 
 Les SharedPreferences sont stockées différemment selon la plateforme :
 - **Android** : Fichiers XML dans `/data/data/`
@@ -12,16 +12,20 @@ Les SharedPreferences sont stockées différemment selon la plateforme :
 - **macOS** : Fichiers `.plist`
 - **Web** : LocalStorage du navigateur
 
----
 
-## 📱 Android
+<br/>
+<br/>
 
-### 📍 Emplacement
+
+
+# Android
+
+### Emplacement
 ```
 /data/data/com.example.demo_shared_preferences/shared_prefs/FlutterSharedPreferences.xml
 ```
 
-### 🔍 Comment accéder (avec un émulateur)
+### Comment accéder (avec un émulateur)
 
 1. **Via Android Studio Device Explorer :**
    - Ouvrir Android Studio
@@ -49,7 +53,7 @@ Les SharedPreferences sont stockées différemment selon la plateforme :
    adb pull /data/data/com.example.demo_shared_preferences/shared_prefs/FlutterSharedPreferences.xml
    ```
 
-### 📄 Format du fichier Android (XML)
+### Format du fichier Android (XML)
 ```xml
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <map>
@@ -59,16 +63,17 @@ Les SharedPreferences sont stockées différemment selon la plateforme :
 </map>
 ```
 
----
+<br/>
+<br/>
 
-## 🍎 iOS
+##  iOS
 
-### 📍 Emplacement
+###  Emplacement
 ```
 /Users/<username>/Library/Developer/CoreSimulator/Devices/<UUID>/data/Library/Preferences/<bundle-id>.plist
 ```
 
-### 🔍 Comment accéder (avec un simulateur)
+###  Comment accéder (avec un simulateur)
 
 1. **Trouver l'UUID du simulateur :**
    ```bash
@@ -86,7 +91,7 @@ Les SharedPreferences sont stockées différemment selon la plateforme :
    plutil -p com.example.demoSharedPreferences.plist
    ```
 
-### 📄 Format du fichier iOS (plist)
+###  Format du fichier iOS (plist)
 ```xml
 <dict>
     <key>flutter.username</key>
@@ -98,14 +103,15 @@ Les SharedPreferences sont stockées différemment selon la plateforme :
 </dict>
 ```
 
----
+<br/>
+<br/>
 
-## 🪟 Windows
+#  Windows
 
-### 📍 Emplacement
+###  Emplacement
 **Registre Windows :** `HKEY_CURRENT_USER\Software\<company>\<app_name>`
 
-### 🔍 Comment accéder
+###  Comment accéder
 
 1. **Via l'Éditeur de Registre (regedit) :**
    - Appuyer sur `Win + R` → taper `regedit`
@@ -126,23 +132,24 @@ Les SharedPreferences sont stockées différemment selon la plateforme :
    reg query "HKEY_CURRENT_USER\Software\demo_shared_preferences"
    ```
 
-### 📄 Format Windows (Registre)
+###  Format Windows (Registre)
 ```
 flutter.username    REG_SZ    admin
 flutter.password    REG_SZ    password123
 flutter.remember_me REG_DWORD 0x1
 ```
 
----
+<br/>
+<br/>
 
-## 🐧 Linux
+##  Linux
 
-### 📍 Emplacement
+###  Emplacement
 ```
 ~/.local/share/demo_shared_preferences/shared_preferences.json
 ```
 
-### 🔍 Comment accéder
+###  Comment accéder
 ```bash
 # Naviguer vers le dossier
 cd ~/.local/share/demo_shared_preferences/
@@ -154,7 +161,7 @@ cat shared_preferences.json
 cat shared_preferences.json | python -m json.tool
 ```
 
-### 📄 Format Linux (JSON)
+###  Format Linux (JSON)
 ```json
 {
   "flutter.username": "admin",
@@ -163,16 +170,17 @@ cat shared_preferences.json | python -m json.tool
 }
 ```
 
----
+<br/>
+<br/>
 
-## 🖥️ macOS
+##  macOS
 
-### 📍 Emplacement
+###  Emplacement
 ```
 ~/Library/Preferences/com.example.demo_shared_preferences.plist
 ```
 
-### 🔍 Comment accéder
+###  Comment accéder
 ```bash
 # Lire le fichier plist
 plutil -p ~/Library/Preferences/com.example.demo_shared_preferences.plist
@@ -181,14 +189,15 @@ plutil -p ~/Library/Preferences/com.example.demo_shared_preferences.plist
 plutil -convert xml1 ~/Library/Preferences/com.example.demo_shared_preferences.plist -o -
 ```
 
----
+<br/>
+<br/>
 
-## 🌐 Web (Navigateur)
+##  Web (Navigateur)
 
-### 📍 Emplacement
+###  Emplacement
 **LocalStorage du navigateur**
 
-### 🔍 Comment accéder
+###  Comment accéder
 
 1. **Via les DevTools du navigateur :**
    - Ouvrir l'application dans Chrome/Firefox
@@ -209,7 +218,7 @@ plutil -convert xml1 ~/Library/Preferences/com.example.demo_shared_preferences.p
    localStorage.getItem('flutter.username')
    ```
 
-### 📄 Format Web (LocalStorage)
+###  Format Web (LocalStorage)
 ```
 flutter.username = "admin"
 flutter.password = "password123"
@@ -243,9 +252,10 @@ ElevatedButton(
 )
 ```
 
----
+<br/>
+<br/>
 
-## 📝 Conseils pour les tests
+##  Conseils pour les tests
 
 ### 1. **Effacer les données pendant les tests**
 ```dart
@@ -267,24 +277,26 @@ static const String _usernameKey = '${_prefix}username';
 bool hasData = prefs.containsKey('username');
 ```
 
----
+<br/>
+<br/>
 
-## 🚨 Notes importantes
+##  Notes importantes
 
 ### **Sécurité :**
-- ⚠️ Les SharedPreferences ne sont **PAS chiffrées** par défaut
-- ⚠️ Ne jamais stocker de données sensibles (mots de passe, tokens)
-- ✅ Utiliser `flutter_secure_storage` pour les données sensibles
+-  Les SharedPreferences ne sont **PAS chiffrées** par défaut
+-  Ne jamais stocker de données sensibles (mots de passe, tokens)
+- Utiliser `flutter_secure_storage` pour les données sensibles
 
 ### **Limitations :**
-- 📱 Android : Effacées lors de la désinstallation
-- 🍎 iOS : Sauvegardées dans iCloud par défaut
-- 🌐 Web : Limitées par les quotas du navigateur
-- 🪟 Windows : Persistantes même après désinstallation
+- Android : Effacées lors de la désinstallation
+- iOS : Sauvegardées dans iCloud par défaut
+- Web : Limitées par les quotas du navigateur
+- Windows : Persistantes même après désinstallation
 
----
+<br/>
+<br/>
 
-## 🔧 Commandes utiles pour le développement
+# Commandes utiles pour le développement
 
 ```bash
 # Effacer le cache de l'app (Android)
@@ -297,6 +309,5 @@ flutter clean && flutter run
 flutter logs
 ```
 
----
 
 **🎓 Ce tutoriel vous permet de comprendre exactement où et comment Flutter stocke vos SharedPreferences sur chaque plateforme !** 
