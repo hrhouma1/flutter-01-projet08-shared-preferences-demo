@@ -6,14 +6,14 @@ Une application de démonstration pour enseigner l'utilisation des SharedPrefere
 
 Cette application démontre :
 
-- ✅ **Interface d'authentification** avec champs username/password
-- ✅ **Case "Se souvenir de moi"** pour sauvegarder les identifiants
-- ✅ **Chargement automatique** des identifiants sauvegardés au démarrage
-- ✅ **Bouton d'effacement** pour supprimer toutes les données sauvegardées
-- ✅ **Affichage en temps réel** de l'état des données
-- ✅ **Navigation** vers un écran d'accueil après connexion
+-  **Interface d'authentification** avec champs username/password
+-  **Case "Se souvenir de moi"** pour sauvegarder les identifiants
+-  **Chargement automatique** des identifiants sauvegardés au démarrage
+-  **Bouton d'effacement** pour supprimer toutes les données sauvegardées
+-  **Affichage en temps réel** de l'état des données
+-  **Navigation** vers un écran d'accueil après connexion
 
-## 🚀 Installation et lancement
+# Installation et lancement
 
 1. **Cloner ou télécharger le projet**
 2. **Installer les dépendances :**
@@ -25,7 +25,7 @@ Cette application démontre :
    flutter run
    ```
 
-## 🔧 Utilisation pour apprendre
+# Utilisation pour apprendre
 
 ### Test des fonctionnalités :
 
@@ -37,12 +37,12 @@ Cette application démontre :
 
 ### Points d'apprentissage :
 
-- 📋 **Persistance des données** entre les sessions
-- 🔐 **Gestion des préférences utilisateur**
-- 💾 **Sauvegarde/chargement asynchrone**
-- 🗑️ **Suppression des données**
+- **Persistance des données** entre les sessions
+- **Gestion des préférences utilisateur**
+- **Sauvegarde/chargement asynchrone**
+- **Suppression des données**
 
-## 📚 Concepts techniques abordés
+# Concepts techniques abordés
 
 ### SharedPreferences - Méthodes utilisées :
 
@@ -71,7 +71,7 @@ await prefs.clear(); // Supprime tout
 - **Navigation** entre écrans
 - **Gestion des erreurs** et messages utilisateur
 
-## 📝 Exercices suggérés pour les étudiants
+# Exercices suggérés pour les étudiants
 
 1. **Ajouter un thème sombre** sauvegardé dans SharedPreferences
 2. **Implémenter une langue** (français/anglais) mémorisée
@@ -79,18 +79,18 @@ await prefs.clear(); // Supprime tout
 4. **Créer un système de paramètres** complet
 5. **Ajouter une validation** avancée des champs
 
-## 🎯 Extensions possibles
+# Extensions possibles
 
 - Chiffrement des mots de passe
 - Gestion de plusieurs utilisateurs
 - Sauvegarde dans un fichier JSON
 - Integration avec une base de données locale (SQLite)
 
-## 📖 Documentation officielle
+# Documentation officielle
 
 - [SharedPreferences Package](https://pub.dev/packages/shared_preferences)
 - [Flutter State Management](https://flutter.dev/docs/development/data-and-backend/state-mgmt)
 
----
 
-**Bonne démonstration ! 🎓**
+
+**Bonne démonstration !**
