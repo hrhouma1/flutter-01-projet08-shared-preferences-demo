@@ -225,9 +225,10 @@ flutter.password = "password123"
 flutter.remember_me = "true"
 ```
 
----
+<br/>
+<br/>
 
-## 🛠️ Outils de debugging dans le code
+# Outils de debugging dans le code
 
 ### Afficher toutes les clés sauvegardées
 ```dart
