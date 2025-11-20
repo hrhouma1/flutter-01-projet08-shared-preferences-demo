@@ -93,4 +93,10 @@ await prefs.clear(); // Supprime tout
 
 
 
-**Bonne démonstration !**
+
+<br/>
+
+# Annexe 1
+
+
+<img width="1901" height="488" alt="image" src="https://github.com/user-attachments/assets/bbf73ae7-81fe-4375-8de7-6057fc3efb02" />
