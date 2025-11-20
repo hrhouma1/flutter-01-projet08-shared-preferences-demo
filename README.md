@@ -100,3 +100,53 @@ await prefs.clear(); // Supprime tout
 
 
 <img width="1901" height="488" alt="image" src="https://github.com/user-attachments/assets/bbf73ae7-81fe-4375-8de7-6057fc3efb02" />
+
+
+# Annexe 2
+
+### 1. Pré-requis
+
+* Ton **émulateur** (ou téléphone) doit être lancé.
+* Tu dois connaître le **nom du package** de ton app, par ex. :
+  `com.example.myapp`
+* Il faut une **version debug** de l’app (avec `android:debuggable="true"` – c’est le cas par défaut en debug).
+
+---
+
+### 2. Ouvrir un shell dans ton app avec `run-as`
+
+```bash
+adb shell
+run-as com.example.myapp
+cd /data/data/com.example.myapp/shared_prefs
+ls
+```
+
+* `ls` va lister tes fichiers de préférences, par ex. `my_prefs.xml`.
+
+Pour afficher le contenu :
+
+```bash
+cat my_prefs.xml
+```
+
+---
+
+### 3. Récupérer le fichier sur ton PC
+
+En une seule commande :
+
+```bash
+adb shell "run-as com.example.myapp cat /data/data/com.example.myapp/shared_prefs/my_prefs.xml" > my_prefs.xml
+```
+
+Tu auras alors `my_prefs.xml` dans le dossier courant de ton terminal, que tu peux ouvrir avec un éditeur de texte.
+
+---
+
+### 4. Si `run-as` donne “Permission denied”
+
+* Ça veut dire que ton app **n’est pas debuggable** (souvent un build release).
+* Solution : lancer un **debug build** depuis Android Studio, puis refaire les commandes.
+
+
